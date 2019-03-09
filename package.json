@@ -1,0 +1,31 @@
+{
+  "name": "silly-snippets",
+  "version": "0.0.1",
+  "description": "simple scripts for daily and once in a while use",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preversion": "yarn build",
+    "postversion": "git push origin --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klvenky/silly-snippets.git"
+  },
+  "keywords": [
+    "snippets",
+    "daily-use",
+    "javascript",
+    "typescript"
+  ],
+  "author": "klvenky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klvenky/silly-snippets/issues"
+  },
+  "homepage": "https://github.com/klvenky/silly-snippets#readme",
+  "devDependencies": {
+    "typescript": "^3.3.3333"
+  }
+}
