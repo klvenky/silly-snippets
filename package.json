@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "preversion": "yarn build",
+    "test": "jest",
+    "preversion": "yarn build && yarn test",
     "postversion": "git push origin --tags"
   },
   "repository": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/klvenky/silly-snippets#readme",
   "devDependencies": {
+    "jest": "^24.7.1",
     "typescript": "^3.3.3333"
   }
 }
