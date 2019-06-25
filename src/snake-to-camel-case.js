@@ -1,18 +1,29 @@
-const out = {};
+/**
+ * { [k:string]: string }
+ */
+const outputCache = {};
 
 /**
  *
- * @param {string} str
+ * @param { string } inputString
  * @returns string
  */
-function getCamelCaseFromSnake(str) {
-  if (!out[str]) {
-    out[str] = str.split('_').reduce((acc, a, i) => {
-      if (a) return i === 0 ? a : a ? `${acc}${a[0].toUpperCase()}${a.slice(1)}` : '';
-      else return acc;
-    }, '');
+function getCamelCaseFromSnakeCase(inputString) {
+  if (!outputCache[inputString]) {
+    const split = inputString.split('_');
+    let resultStr = '';
+    for (let i = 0; i < split.length; i += 1) {
+      const str = split[i];
+      if (str) {
+        if (i === 0) resultStr = str;
+        else if (str) {
+          resultStr = `${resultStr}${str[0].toUpperCase()}${str.slice(1)}`;
+        }
+      }
+    }
+    outputCache[inputString] = resultStr;
   }
-  return out[str];
+  return outputCache[inputString];
 }
 
-module.exports = getCamelCaseFromSnake;
+module.exports = getCamelCaseFromSnakeCase;
